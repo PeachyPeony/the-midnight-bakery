@@ -1,23 +1,17 @@
 import express from 'express';
 import dotenv from 'dotenv';
-import { MongoClient, ObjectId } from 'mongodb';
+import mongoose from 'mongoose';
+import Pastry from './models/pastry.js';
 
 dotenv.config();
 
-const client = new MongoClient(process.env.MONGODB_URI);
+await mongoose.connect(process.env.MONGODB_URI);
 
-await client.connect();
-
-console.log('Connected to MongoDB!');
-
-const db = client.db('midnight-bakery');
-const pastriesCollection = db.collection('pastries');
+console.log('Connected to MongoDB with Mongoose!');
 
 function isValidId(id) {
     return /^[0-9a-fA-F]{24}$/.test(id);
 }
-
-dotenv.config();
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -29,7 +23,7 @@ app.get('/', (req, res) => {
 });
 
 app.get('/pastries', async (req, res) => {
-    const pastries = await pastriesCollection.find().toArray();
+    const pastries = await Pastry.find();
     res.json(pastries);
 });
 
@@ -38,9 +32,7 @@ app.get('/pastries/:id', async (req, res) => {
         return res.status(400).json({ error: 'Invalid pastry ID' });
     }
 
-    const pastry = await pastriesCollection.findOne({
-        _id: new ObjectId(req.params.id)
-    });
+    const pastry = await Pastry.findById(req.params.id);
 
     if (!pastry) {
         return res.status(404).json({ error: 'Pastry not found' });
@@ -54,26 +46,23 @@ app.put('/pastries/:id', async (req, res) => {
         return res.status(400).json({ error: 'Invalid pastry ID' });
     }
 
-    const updatedPastry = req.body;
-
-    const result = await pastriesCollection.replaceOne(
-        { _id: new ObjectId(req.params.id) },
-        updatedPastry
+    const updatedPastry = await Pastry.findByIdAndUpdate(
+        req.params.id,
+        req.body,
+        { new: true, runValidators: true }
     );
 
-    if (result.matchedCount === 0) {
+    if (!updatedPastry) {
         return res.status(404).json({ error: 'Pastry not found' });
     }
 
-    res.json(result);
+    res.json(updatedPastry);
 });
 
 app.post('/pastries', async (req, res) => {
-    const newPastry = req.body;
-
-    const result = await pastriesCollection.insertOne(newPastry);
-
-    res.status(201).json(result);
+    const newPastry = new Pastry(req.body);
+    await newPastry.save();
+    res.status(201).json(newPastry);
 });
 
 app.delete('/pastries/:id', async (req, res) => {
@@ -81,15 +70,23 @@ app.delete('/pastries/:id', async (req, res) => {
         return res.status(400).json({ error: 'Invalid pastry ID' });
     }
 
-    const result = await pastriesCollection.deleteOne({
-        _id: new ObjectId(req.params.id)
-    });
+    const deletedPastry = await Pastry.findByIdAndDelete(req.params.id);
 
-    if (result.deletedCount === 0) {
+    if (!deletedPastry) {
         return res.status(404).json({ error: 'Pastry not found' });
     }
 
     res.json({ message: 'Pastry deleted successfully' });
+});
+
+app.use((err, req, res, next) => {
+    console.error(err);
+
+    if (err.name === 'ValidationError') {
+        return res.status(400).json({ error: err.message });
+    }
+
+    res.status(500).json({ error: 'Internal server error' });
 });
 
 app.listen(PORT, () => {

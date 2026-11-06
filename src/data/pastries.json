@@ -1,0 +1,114 @@
+[
+    {
+        "name": "Moonbeam Croissants",
+        "category": "Truly magical",
+        "description": "Flaky golden croissants sprinkled with moonflower sugar.",
+        "magicalDetail": "Eating one brings especially peaceful dreams.",
+        "rarity": "Unusual",
+        "isAvailable": true
+    },
+    {
+        "name": "Dreamer's Cinnamon Rolls",
+        "category": "Truly magical",
+        "description": "Soft, freshly baked cinnamon rolls with a delicate swirl of cinnamon.",
+        "magicalDetail": "Eating one brings back the memory of your happiest moment.",
+        "rarity": "Rare",
+        "isAvailable": true
+    },
+    {
+        "name": "Lavender Cloud Buns",
+        "category": "Truly magical",
+        "description": "Soft, fluffy buns with a delicate lavender sweetness.",
+        "magicalDetail": "Eating one makes you feel wonderfully lighthearted.",
+        "rarity": "Common",
+        "isAvailable": true
+    },
+    {
+        "name": "Golden Hour Cookies",
+        "category": "Truly magical",
+        "description": "Golden, buttery cookies with a delicate honey glaze.",
+        "magicalDetail": "Eating one fills you with the warmth and happiness of a perfect summer afternoon.",
+        "rarity": "Common",
+        "isAvailable": true
+    },
+    {
+        "name": "Blackberry Star Tarts",
+        "category": "Truly magical",
+        "description": "Delicate star-shaped tarts filled with dark blackberry jam.",
+        "magicalDetail": "Eating one reveals tiny, shimmering constellations that dance in the air around you.",
+        "rarity": "Unusual",
+        "isAvailable": true
+    },
+    {
+        "name": "Whispering Plum Pies",
+        "category": "Truly magical",
+        "description": "Rich little plum pies with golden, flaky pastry.",
+        "magicalDetail": "Eating one brings a comforting whisper of encouragement when you need it most.",
+        "rarity": "Rare",
+        "isAvailable": true
+    },
+    {
+        "name": "Wishing-Star Éclairs",
+        "category": "Truly magical",
+        "description": "Elegant éclairs filled with silky vanilla cream and topped with shimmering sugar.",
+        "magicalDetail": "Making a wish while eating one gives it a little extra chance of coming true.",
+        "rarity": "Rare",
+        "isAvailable": true
+    },
+    {
+        "name": "Stardust Macarons",
+        "category": "Lightly enchanted",
+        "description": "Delicate macarons that shimmer under moonlight.",
+        "magicalDetail": "They leave a faint sparkling trail.",
+        "rarity": "Rare",
+        "isAvailable": true
+    },
+    {
+        "name": "Hearthglow Scones",
+        "category": "Lightly enchanted",
+        "description": "Warm, buttery scones with a hint of honey and vanilla.",
+        "magicalDetail": "They stay pleasantly warm for hours after baking.",
+        "rarity": "Common",
+        "isAvailable": true
+    },
+    {
+        "name": "Moonflower Shortbread",
+        "category": "Lightly enchanted",
+        "description": "Buttery flower-shaped shortbread with a delicate dusting of vanilla sugar.",
+        "magicalDetail": "The little sugar flowers shimmer softly when the moon is out.",
+        "rarity": "Unusual",
+        "isAvailable": true
+    },
+    {
+        "name": "Rubyberry Danishes",
+        "category": "Lightly enchanted",
+        "description": "Flaky golden pastries filled with sweet ruby-red berry compote.",
+        "magicalDetail": "Their berry filling glimmers like tiny jewels in the light.",
+        "rarity": "Common",
+        "isAvailable": true
+    },
+    {
+        "name": "Little Star Biscuits",
+        "category": "Lightly enchanted",
+        "description": "Tiny, buttery star-shaped biscuits dusted with golden sugar.",
+        "magicalDetail": "They give off a faint twinkle when placed beneath the stars.",
+        "rarity": "Common",
+        "isAvailable": true
+    },
+    {
+        "name": "Moonlit Lemon Tarts",
+        "category": "Lightly enchanted",
+        "description": "Bright little lemon tarts with a silky filling and delicate pastry shells.",
+        "magicalDetail": "Their lemon filling catches the light with a soft, silvery glow.",
+        "rarity": "Common",
+        "isAvailable": true
+    },
+    {
+        "name": "Fairy-Knot Twists",
+        "category": "Lightly enchanted",
+        "description": "Delicate twisted pastries glazed with honey and a touch of cinnamon.",
+        "magicalDetail": "Their little knots always seem to rearrange themselves into different patterns overnight.",
+        "rarity": "Unusual",
+        "isAvailable": true
+    }
+]

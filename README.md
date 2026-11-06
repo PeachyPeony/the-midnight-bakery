@@ -8,5 +8,6 @@ Built with:
 - Express
 - MongoDB
 - Mongoose
+- Postman
 
-The API supports full CRUD operations, Mongoose schema validation, and error handling.
+The API supports full CRUD operations, Mongoose schema validation, error handling and database seeding using JSON data.
